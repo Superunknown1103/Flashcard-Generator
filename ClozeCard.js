@@ -1,5 +1,5 @@
 module.exports = ClozeCard;
-ClozeCard = function(text, cloze) {
+var ClozeCard = function(text, cloze) {
 	var textToLower = text.toLowerCase();
 	var clozeToLower = cloze.toLowerCase();
 

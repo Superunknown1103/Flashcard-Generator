@@ -1,5 +1,5 @@
 module.exports = BasicCard;
-BasicCard = function(front, back) {
+var BasicCard = function(front, back) {
 	this.front = front;
 	this.back = back;
 };
