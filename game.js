@@ -30,5 +30,9 @@ function askQuestion() {
 			console.log('Incorrect!');
 			answerWrong++;
 		}
+
+		console.log(closeQuestions[currentQuestion].full);
+		console.log('----------------------\n');
 	})
+	
 }
