@@ -1,5 +1,5 @@
-module.exports = ClozeCard;
-var ClozeCard = function(text, cloze) {
+
+var clozeCard = function(text, cloze) {
 	var textToLower = text.toLowerCase();
 	var clozeToLower = cloze.toLowerCase();
 
@@ -11,3 +11,5 @@ var ClozeCard = function(text, cloze) {
 	this.cloze = cloze;
 	this.partial = text.replace(cloze, '...');
 };
+
+module.exports = clozeCard;

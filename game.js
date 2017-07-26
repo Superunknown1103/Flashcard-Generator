@@ -1,17 +1,17 @@
 var inquirer = require('inquirer');
-var ClozeCard = require('./ClozeCard.js');
-var BasicCard = require('./BasicCard.js');
+var clozeCard = require('./ClozeCard.js');
+var basicCard = require('./BasicCard.js');
 var questions = require('./questions.js').questions;
 var closeQuestions = [];
 
 for (var i = 0; i < questions.length; i++) {
-	var a = new clozeCard.ClozeCard(questions[i].full, questions[i].cloze);
+	var a = new clozeCard(questions[i].full, questions[i].cloze);
 	closeQuestions.push(a);
 }
 
 var currentQuestion = 0;
 var answerRight = 0;
-var anwserWrong = 0;
+var answerWrong = 0;
 
 function askQuestion() {
 	inquirer.prompt([
@@ -34,6 +34,20 @@ function askQuestion() {
 
 		console.log(closeQuestions[currentQuestion].full);
 		console.log('----------------------\n');
+
+		if (currentQuestion < closeQuestions.length -1){
+			currentQuestion++;
+			askQuestion();
+		} else {
+			console.log('Game Over!');
+			console.log('Correct Answers: ' + answerRight);
+			console.log('Incorrect Answers: ' + answerWrong);
+			console.log('-------------------------------------\n');
+		}
 	})
 
 }
+
+askQuestion();
+
+
